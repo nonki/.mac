@@ -1,6 +1,8 @@
 # download brew
 
-brew install go thefuck rbenv pass keychain node
+brew install go thefuck rbenv pass keychain node rg tmux java jenv python
+
+pip3 install pygments
 
 
 # ssh keys?
