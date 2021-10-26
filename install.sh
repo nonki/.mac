@@ -42,3 +42,4 @@ git clone git@github.com:nonki/.zsh.git
 
 # generate gpg key
 # pass init "GPG KEY ID"
+# cd /tmp && go install golang.org/x/tools/gopls@latest
