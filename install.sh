@@ -39,3 +39,6 @@ git clone git@github.com:nonki/.zsh.git
 /bin/bash -c "$(cat .tmux/link.sh)"
 /bin/bash -c "$(cat .ssh/link.sh)"
 /bin/bash -c "$(cat .zsh/link.sh)"
+
+# generate gpg key
+# pass init "GPG KEY ID"
