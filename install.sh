@@ -2,7 +2,7 @@
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-brew install vim go thefuck rbenv pass keychain node rg tmux java jenv python assh zsh gnupg openjdk
+brew install vim go thefuck rbenv pass keychain node@14 rg tmux java jenv python assh zsh gnupg openjdk
 
 pip3 install pygments
 
