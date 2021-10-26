@@ -1,6 +1,6 @@
 #! /bin/bash
 
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 brew install vim go thefuck rbenv pass keychain node rg tmux java jenv python assh zsh gnupg openjdk
 
@@ -17,7 +17,7 @@ touch ~/.ssh/config
 
 ssh-add -K $keypathvar
 
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 chsh -s $(which zsh)
 
@@ -35,7 +35,7 @@ git clone git@github.com:nonki/.ssh.git
 
 git clone git@github.com:nonki/.zsh.git
 
-sh -c "$(cat .vim/link.sh)"
-sh -c "$(cat .tmux/link.sh)"
-sh -c "$(cat .ssh/link.sh)"
-sh -c "$(cat .zsh/link.sh)"
+/bin/bash -c "$(cat .vim/link.sh)"
+/bin/bash -c "$(cat .tmux/link.sh)"
+/bin/bash -c "$(cat .ssh/link.sh)"
+/bin/bash -c "$(cat .zsh/link.sh)"
