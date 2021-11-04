@@ -6,6 +6,7 @@ brew install node@14
 
 brew link node@14 --force
 
+brew tap kudobuilder/tap
 brew install vim go thefuck rbenv pass keychain rg tmux java jenv python assh zsh gnupg openjdk pygments kind kubectl kustomize kubebuilder kuttl-cli
 
 read -p 'Generate new key? [y/N]: ' shouldGenerateKey
