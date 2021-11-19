@@ -13,7 +13,7 @@ read -p 'Generate new key? [y/N]: ' shouldGenerateKey
 
 shouldGenerateKey=${shouldGenerateKey:-"N"}
 
-if [ shouldGenerateKey == 'y' ]; then
+if [ shouldGenerateKey == 'y' ]; then # failed
   ssh-keygen -t ed25519 -C "thomas.flack@skybettingandgaming.com"
 fi
 
@@ -26,9 +26,9 @@ touch ~/.ssh/config
 
 ssh-add -K $keypathvar
 
-/bin/bash -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" # took me into seperate shell
 
-pbcopy < $keypathvar
+pbcopy < $keypathvar # need to be .pub
 
 read -p 'Continue once uploaded key to Github [y]: ' contvar
 
@@ -48,6 +48,7 @@ git clone git@github.com:nonki/.zsh.git
 /bin/bash -c "$(cat .tmux/link.sh)"
 /bin/bash -c "$(cat .ssh/link.sh)"
 /bin/bash -c "$(cat .zsh/link.sh)"
+# download another
 
 # generate gpg key
 # pass init "GPG KEY ID"
