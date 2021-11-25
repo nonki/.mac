@@ -57,4 +57,13 @@ cd /tmp && go install golang.org/x/tools/gopls@latest
 
 ssh-keyscan -t rsa stash.skybet.net >> ~/.ssh/known_hosts
 
+mkdir -p ~/tmp/.ssh
+
+ln -s ~/code/github.com/nonki/.tmux ~/.tmux
+ln -s ~/code/github.com/nonki/.vim ~/.vim
+ln -s ~/code/github.com/nonki/.zshenv ~/.zshenv
+ln -s ~/code/github.com/nonki/.ssh/assh.yml ~/.ssh/assh.yml
+
+~/.vim/install.sh
+
 /bin/bash -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" # took me into seperate shell
