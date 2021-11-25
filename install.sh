@@ -64,10 +64,12 @@ ln -s ~/code/github.com/nonki/.vim ~/.vim
 ln -s ~/code/github.com/nonki/.zshenv ~/.zshenv
 ln -s ~/code/github.com/nonki/.ssh/assh.yml ~/.ssh/assh.yml
 
-~/.vim/install.sh
 
 git config --global user.name "Thomas Flack"
 git config --global user.email "thomas.flack@skybettingandgaming.com"
 git config --global core.hooksPath ~/code/github.com/nonki/.gitconfig/hooks
+
+~/.vim/install.sh
+
 
 /bin/bash -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" # took me into seperate shell
