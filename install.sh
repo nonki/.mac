@@ -2,12 +2,12 @@
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-brew install node@14
+xcode-select --install
 
-brew link node@14 --force
+wget https://raw.githubusercontent.com/tomato-net/.mac/master/Brewfile -o /tmp/Brewfile
 
-brew tap kudobuilder/tap
-brew install vim go thefuck rbenv pass keychain rg tmux java jenv python assh zsh gnupg pygments kind kubectl kustomize kubebuilder kuttl-cli jq
+brew bundle install --file /tmp/Brewfile
+
 
 read -p 'Generate new key? [y/N]: ' shouldGenerateKey
 
@@ -70,6 +70,5 @@ git config --global user.email "thomas.flack@skybettingandgaming.com"
 git config --global core.hooksPath ~/code/github.com/nonki/.gitconfig/hooks
 
 ~/.vim/install.sh
-
 
 /bin/bash -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" # took me into seperate shell
