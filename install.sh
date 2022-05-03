@@ -30,19 +30,19 @@ pbcopy < $keypathvar # need to be .pub
 
 read -p 'Continue once uploaded key to Github [y]: ' contvar
 
-mkdir -p ~/code/github.com/nonki
+mkdir -p ~/code/github.com/tomato-net
 
-cd ~/code/github.com/nonki
+cd ~/code/github.com/tomato-net
 
-git clone git@github.com:nonki/.vim.git
+git clone git@github.com:tomato-net/.vim.git
 
-git clone git@github.com:nonki/.tmux.git
+git clone git@github.com:tomato-net/.tmux.git
 
-git clone git@github.com:nonki/.ssh.git
+git clone git@github.com:tomato-net/.ssh.git
 
-git clone git@github.com:nonki/.zsh.git
+git clone git@github.com:tomato-net/.zsh.git
 
-git clone git@github.com:nonki/.gitconfig.git
+git clone git@github.com:tomato-net/.gitconfig.git
 
 #/bin/bash -c "$(cat .vim/link.sh)"
 #/bin/bash -c "$(cat .tmux/link.sh)"
@@ -59,15 +59,16 @@ ssh-keyscan -t rsa stash.skybet.net >> ~/.ssh/known_hosts
 
 mkdir -p ~/tmp/.ssh
 
-ln -s ~/code/github.com/nonki/.tmux ~/.tmux
-ln -s ~/code/github.com/nonki/.vim ~/.vim
-ln -s ~/code/github.com/nonki/.zshenv ~/.zshenv
-ln -s ~/code/github.com/nonki/.ssh/assh.yml ~/.ssh/assh.yml
+ln -s ~/code/github.com/tomato-net/.zshenv ~/.zshenv
+[ -d "~/.tmux" ] && rm -rf ~/.tmux
+ln -s ~/code/github.com/tomato-net/.tmux ~/.tmux
+[ -d "~/.vim" ] && rm -rf ~/.vim
+ln -s ~/code/github.com/tomato-net/.vim ~/.vim
+ln -s ~/code/github.com/tomato-net/.ssh/assh.yml ~/.ssh/assh.yml
 
 
 git config --global user.name "Thomas Flack"
 git config --global user.email "thomas.flack@skybettingandgaming.com"
-git config --global core.hooksPath ~/code/github.com/nonki/.gitconfig/hooks
 
 ~/.vim/install.sh
 
