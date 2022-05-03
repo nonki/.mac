@@ -66,3 +66,5 @@ git config --global user.email "thomas.flack@skybettingandgaming.com"
 ~/.vim/install.sh
 
 /bin/bash -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" # took me into seperate shell
+
+# tmux insstall run prefix + I
