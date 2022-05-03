@@ -4,10 +4,7 @@
 
 xcode-select --install
 
-wget https://raw.githubusercontent.com/tomato-net/.mac/master/Brewfile -o /tmp/Brewfile
-
-brew bundle install --file /tmp/Brewfile
-
+brew bundle install --no-lock --file <(curl -fsSL https://raw.githubusercontent.com/tomato-net/.mac/master/Brewfile)
 
 read -p 'Generate new key? [y/N]: ' shouldGenerateKey
 
@@ -18,15 +15,17 @@ if [ $shouldGenerateKey == 'y' ]; then # failed
 fi
 
 read -p 'Path to key [~/.ssh/id_ed25519]: ' keypathvar
-keypathvar=${keypathvar:-"~/.ssh/id_ed25519"}
+keypathvar=${keypathvar:-"${HOME}/.ssh/id_ed25519"}
 
 eval "$(ssh-agent -s)"
 
 touch ~/.ssh/config
 
-ssh-add -K $keypathvar
+ssh-add -K "${keypathvar}"
 
-pbcopy < $keypathvar # need to be .pub
+pubkey="${keypathvar}.pub"
+
+pbcopy < $pubkey # need to be .pub
 
 read -p 'Continue once uploaded key to Github [y]: ' contvar
 
@@ -44,13 +43,7 @@ git clone git@github.com:tomato-net/.zsh.git
 
 git clone git@github.com:tomato-net/.gitconfig.git
 
-#/bin/bash -c "$(cat .vim/link.sh)"
-#/bin/bash -c "$(cat .tmux/link.sh)"
-#/bin/bash -c "$(cat .ssh/link.sh)"
-#/bin/bash -c "$(cat .zsh/link.sh)"
-# download another
-
-# generate gpg key
+gpg --full-generate-key
 # pass init "GPG KEY ID"
 
 cd /tmp && go install golang.org/x/tools/gopls@latest
